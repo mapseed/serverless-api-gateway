@@ -11,7 +11,8 @@
       {
         "region": "us-west-2",
         "iamRoleArnLambda": "arn:aws:iam::800628757259:role/mapboxDuwamish-development-r-IamRoleLambda-1DA7FHJ4H21B1",
-        "regionBucket": "serverless.uswest2.mapbox.heyduwamish.org"
+        "regionBucket": "serverless.uswest2.mapbox.heyduwamish.org",
+        "restApiId": "t9t3m4dora"
       }
     ]
   },
