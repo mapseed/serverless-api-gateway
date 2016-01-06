@@ -12,6 +12,7 @@
   "keywords": [],
   "devDependencies": {},
   "dependencies": {
+    "request": "^2.67.0",
     "serverless-helpers-js": "~0.0.3"
   }
 }
