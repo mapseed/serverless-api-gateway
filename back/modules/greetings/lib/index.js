@@ -23,11 +23,11 @@ module.exports.getMapboxWithTitle = function(event, cb) {
   }, function (error, response, body) {
     if (error) {
       console.log("error: ", error)
-      return { error: "error: " + error }
+      return cb("error: " + error, null);
     }
     if (response.statusCode >= 400) {
       console.log("status code >= 400: " + response.statusCode)
-      return { error: 'status code: ' + response.statusCode }
+      return cb('status code: ' + response.statusCode, null);
     }
     // Let's process the body to transform the feature.properties.title into feature.title:
     var numberOfFeatures = body['features'].length;
