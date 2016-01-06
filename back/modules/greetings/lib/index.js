@@ -2,6 +2,11 @@
  * Lib
  */
 var request = require('request')
+var urlify = require('urlify').create({
+  spaces:"-",
+  nonPrintable:"",
+  trim:true
+});
 
 module.exports.respond = function(event, cb) {
 
@@ -36,7 +41,9 @@ module.exports.getMapboxWithTitle = function(event, cb) {
     var i;
     for (i = 0; i < numberOfFeatures; i++) {
       var featureTitle = body.features[i].properties.title;
-      var navTitle = featureTitle.replace(/<[^>]*>/g,'').replace(/[\/&:]/g, '').replace(/ /g, '-').replace(/--+/g, '-');
+      // Remove any html tags and 'urlify' the title
+      // so it can be used in a url segment
+      var navTitle = urlify(featureTitle.replace(/<[^>]*>/g,''));
       console.log("navTitle: ", navTitle);
       body.features[i]['title'] = navTitle;
     };
