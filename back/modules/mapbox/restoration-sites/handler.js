@@ -15,8 +15,8 @@ var lib = require('../lib');
 
 // Lambda Handler
 module.exports.handler = function(event, context) {
-
-  lib.respond(event, function(error, response) {
+  event['url'] = process.env['MAPBOX_RESTORATION_URL']
+  lib.getMapboxWithTitle(event, function(error, response) {
     return context.done(error, response);
   });
 };
