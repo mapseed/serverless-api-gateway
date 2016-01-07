@@ -1,17 +1,17 @@
 {
   "functions": {
-    "hello": {
+    "restoration-sites": {
       "custom": {
         "excludePatterns": [],
         "envVars": []
       },
-      "handler": "modules/greetings/hello/handler.handler",
+      "handler": "modules/mapbox/restoration-sites/handler.handler",
       "timeout": 6,
       "memorySize": 1024,
       "eventSourceArn": "",
       "endpoints": [
         {
-          "path": "greetings/hello",
+          "path": "mapbox/restoration-sites",
           "method": "GET",
           "authorizationType": "none",
           "apiKeyRequired": false,
