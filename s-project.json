@@ -17,5 +17,9 @@
     ]
   },
   "custom": {},
-  "plugins": []
+  "plugins": [
+    {
+      "path": "serverless-cors-plugin"
+    }
+  ]
 }
