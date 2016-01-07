@@ -14,7 +14,6 @@ var ServerlessHelpers = require('serverless-helpers-js').loadEnv();
 var lib = require('../lib');
 
 // Lambda Handler
-// https://t9t3m4dora.execute-api.us-west-2.amazonaws.com/development/greetings/hello
 module.exports.handler = function(event, context) {
   event['url'] = process.env['MAPBOX_COMMUNITY_URL']
   lib.getMapboxWithTitle(event, function(error, response) {
