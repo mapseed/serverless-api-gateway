@@ -1,0 +1,14 @@
+{
+  "name": "mapbox",
+  "profile": "aws-v0.3.1",
+  "custom": {
+    "cors": {
+      "allowOrigin": "*",
+      "allowHeaders": ["Content-Type", "X-Amz-Date", "Authorization", "X-Api-Key"]
+    }
+  }
+  "cloudFormation": {
+    "resources": {},
+    "lambdaIamPolicyDocumentStatements": []
+  }
+}
