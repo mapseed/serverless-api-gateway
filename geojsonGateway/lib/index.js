@@ -6,10 +6,10 @@ var urlify = require('urlify').create({
   spaces:"-",
   nonPrintable:"",
   trim:true
-});
+})
 
 module.exports.getMapboxWithTitle = function(event, cb) {
-  console.log("greetings/lib/index.js: event:", event);
+  console.log("greetings/lib/index.js: event:", event)
   request({
     url: event.url,
     method: 'GET',
@@ -17,25 +17,33 @@ module.exports.getMapboxWithTitle = function(event, cb) {
   }, function (error, response, body) {
     if (error) {
       console.log("error: ", error)
-      return cb("error: " + error, null);
+      return cb("error: " + error, null)
     }
     if (response.statusCode >= 400) {
       console.log("status code >= 400: " + response.statusCode)
-      return cb('status code: ' + response.statusCode, null);
+      return cb('status code: ' + response.statusCode, null)
     }
-    // Let's process the body to transform the feature.properties.title into feature.title:
-    var numberOfFeatures = body['features'].length;
-    console.log("typeof(body):", typeof(body));
-    console.log("numberOfFeatures:", numberOfFeatures);
-    var i;
+    var numberOfFeatures = body['features'].length
+    var i
     for (i = 0; i < numberOfFeatures; i++) {
-      var featureTitle = body.features[i].properties.title;
+      var feature = body.features[i]
+      // Let's process the body to transform the feature.properties.title
+      // into feature.title:
+      var featureTitle = feature.properties.title
       // Remove any html tags and 'urlify' the title
       // so it can be used in a url segment
-      var navTitle = urlify(featureTitle.replace(/<[^>]*>/g,''));
-      // console.log("navTitle: ", navTitle);
-      body.features[i]['title'] = navTitle;
-    };
-    return cb(null, body);
+      var navTitle = urlify(featureTitle.replace(/<[^>]*>/g,''))
+      feature['title'] = navTitle
+
+      // Let's set the feature.location_type param as well,
+      // using the feature.properties.marker-symbol for Points,
+      // or to 'mapbox' for Polygons
+      if (feature.properties['marker-symbol']) {
+        feature['location_type'] = feature.properties['marker-symbol']
+      } else {
+        feature['location_type'] = 'mapbox'
+      }
+    }
+    return cb(null, body)
   })
-};
+}
