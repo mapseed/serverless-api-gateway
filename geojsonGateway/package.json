@@ -12,6 +12,8 @@
   "keywords": [],
   "devDependencies": {},
   "dependencies": {
-    "serverless-helpers-js": "~0.0.3"
+    "request": "^2.69.0",
+    "serverless-helpers-js": "~0.0.3",
+    "urlify": "^0.3.6"
   }
 }

@@ -16,7 +16,7 @@
       "apiKeyRequired": false,
       "requestParameters": {},
       "requestTemplates": {
-        "application/json": ""
+        "application/json": {"url" : "$input.params('url')"}
       },
       "responses": {
         "400": {

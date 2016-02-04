@@ -6,7 +6,7 @@
       "allowOrigin": "*",
       "allowHeaders": ["Content-Type", "X-Amz-Date", "Authorization", "X-Api-Key"]
     }
-  }
+  },
   "cloudFormation": {
     "resources": {},
     "lambdaIamPolicyDocumentStatements": []
