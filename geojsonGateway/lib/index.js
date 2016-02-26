@@ -32,7 +32,7 @@ module.exports.getMapboxWithTitle = function(event, cb) {
       var featureTitle = feature.properties.title
       // Remove any html tags and 'urlify' the title
       // so it can be used in a url segment
-      var navTitle = urlify(featureTitle.replace(/<[^>]*>/g,''))
+      var navTitle = urlify(featureTitle.replace(/<[^>]*>/g,'')).toLowerCase()
       feature['title'] = navTitle
 
       // Let's set the feature.location_type param as well,
