@@ -1,6 +1,8 @@
 {
   "name": "landmarks",
+  "customName": "geojsonLandmarks",
   "handler": "mapbox/landmarks/handler.handler",
+  "runtime": "nodejs",
   "timeout": 6,
   "memorySize": 1024,
   "custom": {

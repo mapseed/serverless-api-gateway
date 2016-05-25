@@ -10,9 +10,9 @@
     "url": "git://github.com/"
   },
   "dependencies": {
-    "serverless-cors-plugin": "^0.2.1"
+    "serverless-cors-plugin": "^0.4.1"
   },
   "devDependencies": {
-    "serverless-serve": "^1.5.2"
+    "serverless-serve": "^1.7.2"
   }
 }
