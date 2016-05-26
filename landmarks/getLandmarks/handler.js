@@ -1,7 +1,7 @@
 'use strict';
 
+var lib = require('../lib')
+
 module.exports.handler = function(event, context, cb) {
-  return cb(null, {
-    message: 'Go Serverless! Your Lambda function executed successfully!'
-  });
+  lib.getLandmarks(event, cb)
 };
