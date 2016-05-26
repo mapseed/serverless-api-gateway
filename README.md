@@ -1,5 +1,3 @@
-#duwamish
+#MapSeed API Gateway
 
-A simple proxy for the Mapbox Classic API that reads public Mapbox datasets and reformats the GeoJSON so it can be easily imported into the smartercleanup frontend.
-
-At the moment, this is specific to the smartercleanup and Shareabouts frontends, but it's a start!
+When displaying map data from open data sources, we often face the problem of normalizing different schemas across our data sources. It can be a repetitive and tedious task, so we are using this api gateway manage this task on the GeoJSON sources for our SmarterCleanup map flavors.
