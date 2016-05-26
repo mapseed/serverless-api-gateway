@@ -1,13 +1,13 @@
 {
-  "name": "duwamish",
-  "version": "0.0.1",
-  "description": "A Serverless Project and its Serverless Plugin dependencies.",
-  "author": "me",
+  "name": "mapseed-api-gateway",
+  "version": "0.1.1",
+  "description": "Serverless api gateway for mapseed 'landmark' data sources",
+  "author": "Luke Swart",
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git://github.com/"
+    "url": "https://github.com/smartercleanup/serverless-api-gateway.git"
   },
   "dependencies": {
     "serverless-cors-plugin": "^0.4.1"
