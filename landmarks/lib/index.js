@@ -53,12 +53,11 @@ function fetchAndProcessUrl (url, results, done, errors) {
 
 // The url's for our landmarks sources are passed as query params
 // (thus, the url's need be url-encoded)
-module.exports.getLandmarks = function(event, cb) {
+module.exports.getLandmarks = function(queryParams, cb) {
   var results = { features: [] }
   var errors = []
-  eachAsync(Object.keys(event), function (item, index, done) {
-
-    var urlFeatures = fetchAndProcessUrl(item, results, done)
+  eachAsync(queryParams, function (item, index, done) {
+    var urlFeatures = fetchAndProcessUrl(item, results, done, errors)
   }, function (error) {
     if (error) {
       return cb(error)

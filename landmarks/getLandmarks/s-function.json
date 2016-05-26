@@ -21,7 +21,9 @@
       "apiKeyRequired": false,
       "requestParameters": {},
       "requestTemplates": {
-        "application/json": ""
+        "application/json": {
+          "queryParams": "$input.params().querystring"
+        }
       },
       "responses": {
         "400": {
